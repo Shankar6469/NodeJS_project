@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UP O'Clock</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Favicons -->
+  <link href="/images/timer.jpeg" rel="icon">
+  <!-- <link href="/landing_page/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/landing_page/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/landing_page/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/landing_page/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/landing_page/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/landing_page/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="/landing_page/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div id="logo">
+        <h1><a href="/"><span>UP</span>O'Clock</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about-us">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="#screenshots">Screenshots</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/login">SignIN</a></li>
+          <li><a href="#" class="nav-link scrollto" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrationModal">
+            SignUP
+          </a></li>
+          
+        </ul> 
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+<!-- register form  start-->
+<div class="modal" tabindex="-1" role="dialog" id="registrationModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Registration Form</h3>
+        
+      </div>
+      <div class="modal-body">
+        <div class="p-3 bg-light rounded">
+          <form id="registrationForm"  method="post" action="./register"  enctype="multipart/form-data">
+            <div class="form-group row">
+              <label for="full_name" class="col-sm-4 col-form-label fw-bold">Full Name</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter full name">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="username" class="col-sm-4 col-form-label fw-bold">Username</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-4 col-form-label fw-bold">Email address</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-sm-4 col-form-label fw-bold">Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="mobileNumber" class="col-sm-4 col-form-label fw-bold">Mobile Number</label>
+              <div class="col-sm-8">
+                <input type="tel" class="form-control" id="mobileNumber" name="phone_number" placeholder="Enter mobile number">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label fw-bold">Gender</label>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                  <label class="form-check-label" for="other">Other</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="formDOB" class="col-sm-4 col-form-label fw-bold">Date of Birth</label>
+              <div class="col-sm-8">
+                <input type="date" class="form-control" id="formDOB" name="dob" placeholder="Select date" min="1953-01-01" max="2023-12-31">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-3">Create an account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- register form  end-->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Welcome to UP O'Clock</h1>
+      <h2>Effortlessly Track, Efficiently Excel! </h2>
+      <img src="/landing_page/img/hero-img.png" alt="Hero Imgs" data-aos="zoom-out" data-aos-delay="100">
+      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+      <div class="btns">
+        <a href="#"><i class="fa fa-apple fa-3x"></i> MAC</a>
+        <a href="#"><i class="fa fa-play fa-3x"></i> Linux</a>
+        <a href="#"><i class="fa fa-windows fa-3x"></i> windows</a>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Maximize Your Productivity, One Minute at a Time </h2 >
+          <p class="separator">Master Your Time, Conquer Your Goals</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-block">
+
+              <img src="/landing_page/img/svg/cloud.svg" alt="img">
+              <h4>introducing UP O'Clock</h4>
+              <p>Unlock your productivity with Up O'Clock: Time management made easy.</p>
+              <a href="#">read more</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-block">
+
+              <img src="/landing_page/img/svg/planet.svg" alt="img">
+              <h4>user friendly interface</h4>
+              <p>Simplify your tasks with our intuitive and user-friendly interface</p>
+              <a href="#">read more</a>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-block">
+
+              <img src="/landing_page/img/svg/asteroid.svg" alt="img">
+              <h4>App everyone love</h4>
+              <p>Discover the app everyone loves for seamless productivity and enjoyment.</p>
+              <a href="#">read more</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End Get Started Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us padd-section">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-5 col-lg-3">
+            <img src="/landing_page/img/about-img.png" alt="About" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+
+          <div class="col-md-7 col-lg-5">
+            <div class="about-content" data-aos="fade-left" data-aos-delay="100">
+
+              <h2><span>UP O'Clock</span>UI Design for Laptop &amp; Desktop </h2>
+              <p>"Experience the sleek and responsive UI design of Up O'Clock, tailored for optimal performance on laptops and desktops.
+              </p>
+
+              <ul class="list-unstyled">
+                <li><i class="vi bi-chevron-right"></i>Creative Design</li>
+                <li><i class="vi bi-chevron-right"></i>Retina Ready</li>
+                <li><i class="vi bi-chevron-right"></i>Easy to Use</li>
+                <li><i class="vi bi-chevron-right"></i>Unlimited Features</li>
+                <li><i class="vi bi-chevron-right"></i>Unlimited Features</li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Amazing Features.</h2>
+          <p class="separator">Innovative, intuitive, and awe-inspiring features that redefine the standard.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/paint-palette.svg" alt="img">
+              <h4>creative design</h4>
+              <p>Unleashing imagination, crafting beauty through innovative designs that inspire.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/vector.svg" alt="img">
+              <h4>Retina Ready</h4>
+              <p>Crystal-clear, pixel-perfect visuals for an immersive visual experience.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/design-tool.svg" alt="img">
+              <h4>easy to use</h4>
+              <p>Effortless usability that simplifies tasks and enhances user experience.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/asteroid.svg" alt="img">
+              <h4>Free Updates</h4>
+              <p>Continual enhancements and upgrades at no additional cost.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/asteroid.svg" alt="img">
+              <h4>Free Updates</h4>
+              <p>Continual enhancements and upgrades at no additional cost.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/cloud-computing.svg" alt="img">
+              <h4>App store support</h4>
+              <p>Seamless integration with popular app stores for maximum accessibility.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/pixel.svg" alt="img">
+              <h4>Perfect Pixel</h4>
+              <p>Exquisite attention to detail, ensuring flawless pixel precision</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-block">
+              <img src="/landing_page/img/svg/code.svg" alt="img">
+              <h4>clean codes</h4>
+              <p>Impeccably organized and efficient codebase for seamless development and maintenance.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Screenshots Section ======= -->
+    <section id="screenshots" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>App Gallery</h2>
+          <p class="separator">A captivating gallery showcasing an array of stunning applications.</p>
+        </div>
+
+        <div class="screens-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="/landing_page/img/screen/1.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_page/img/screen/3.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_page/img/screen/2.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_page/img/screen/4.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_page/img/screen/5.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_page/img/screen/6.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_page/img/screen/7.jpg" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/landing_pageimg/screen/8.jpg" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </section><!-- End Screenshots Section -->
+
+    <!-- ======= Video Section ======= -->
+    <section id="video" class="text-center">
+      <div class="overlay">
+        <div class="container-fluid container-full" data-aos="zoom-in">
+
+          <div class="row">
+            <a href="/video/2.mp4" class="glightbox play-btn"></a>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Video Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="padd-section text-center">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Team Member</h2>
+          <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="team-block bottom">
+              <img src="/landing_page/img/team/1.jpg" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                </ul>
+                <span>manager</span>
+                <h4>Kimberly Tran</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="team-block bottom">
+              <img src="/landing_page/img/team/2.jpg" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                </ul>
+                <span>manager</span>
+                <h4>Kimberly Tran</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="team-block bottom">
+              <img src="/landing_page/img/team/3.jpg" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                </ul>
+                <span>manager</span>
+                <h4>Kimberly Tran</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="team-block bottom">
+              <img src="/landing_page/img/team/4.jpg" class="img-responsive" alt="img">
+              <div class="team-content">
+                <ul class="list-unstyled">
+                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                </ul>
+                <span>manager</span>
+                <h4>Kimberly Tran</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="padd-section text-center">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-8">
+
+            <div class="testimonials-content">
+              <div id="carousel-example-generic" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-inner" role="listbox">
+
+                  <div class="carousel-item  active">
+                    <div class="top-top">
+
+                      <h2>Our Users Speack volumes us</h2>
+                      <p>Our users' testimonials are a resounding testament to our exceptional quality, unwavering commitment, and the positive impact we bring to their lives, fueling our passion to strive for greatness.</p>
+                      <h4>Kimberly Tran<span>manager</span></h4>
+
+                    </div>
+                  </div>
+
+                  <div class="carousel-item ">
+                    <div class="top-top">
+
+                      <h2>Our Users Speack volumes us</h2>
+                      <p>Our users' resounding praise and heartfelt testimonials serve as a powerful testament to the profound value we bring to their lives, motivating us to continuously surpass expectations and reach new heights of excellence</p>
+                      <h4>Henderson<span>manager</span></h4>
+
+                    </div>
+                  </div>
+
+                  <div class="carousel-item ">
+                    <div class="top-top">
+
+                      <h2>Our Users Speack volumes us</h2>
+                      <p>Every word of appreciation from our users fuels our dedication, inspires innovation, and reaffirms our mission to create meaningful experiences that leave a lasting impact on their lives.</p>
+                      <h4>David Spark<span>manager</span></h4>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="btm-btm">
+
+                  <ul class="list-unstyled carousel-indicators">
+                    <li data-bs-target="#carousel-example-generic" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carousel-example-generic" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carousel-example-generic" data-bs-slide-to="2"></li>
+                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="padd-section text-cente">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Meet With Price</h2>
+          <p class="separator">Unveil the perfect blend of quality and affordability, meeting your needs with an enticing price</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>basic</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>PERSONAL</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>BUSINESS</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>profeesional</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="#" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="padd-sectio">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Latest posts</h2>
+          <p class="separator">Stay updated with our latest posts for insightful content and inspiration.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-4">
+            <div class="block-blog text-left">
+              <a href="#"><img src="/landing_page/img/blog/blog-image-1.jpg" alt="img"></a>
+              <div class="content-blog">
+                <h4><a href="#">whats isthe difference between good and bat typography</a></h4>
+                <span>05, juin 2017</span>
+                <a class="float-end readmore" href="#">read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="block-blog text-left">
+              <a href="#"><img src="/landing_page/img/blog/blog-image-2.jpg" class="img-responsive" alt="img"></a>
+              <div class="content-blog">
+                <h4><a href="#">whats isthe difference between good and bat typography</a></h4>
+                <span>05, juin 2017</span>
+                <a class="float-end readmore" href="#">read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="block-blog text-left">
+              <a href="#"><img src="/landing_page/img/blog/blog-image-3.jpg" class="img-responsive" alt="img"></a>
+              <div class="content-blog">
+                <h4><a href="#">whats isthe difference between good and bat typography</a></h4>
+                <span>05, juin 2017</span>
+                <a class="float-end readmore" href="#">read more</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Newsletter Section ======= -->
+    <section id="newsletter" class="newsletter text-center">
+      <div class="overlay padd-section">
+        <div class="container" data-aos="zoom-in">
+
+          <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-6">
+              <form class="d-flex" method="POST" action="#">
+                <input type="email" class="form-control " placeholder="Email Adress" name="email">
+                <button type="submit" class="btn btn-default"><i class="bi bi-location-arrow"></i>Subscribe</button>
+              </form>
+            </div>
+          </div>
+
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+          </ul>
+
+        </div>
+      </div>
+    </section><!-- End Newsletter Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="padd-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+          <h2>Contact</h2>
+          <p class="separator">Get in touch with us today and discover how we can collaborate to bring your vision to life.</p>
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="bi bi-geo-alt"></i>
+                <p>A108 Adam Street<br>New York, NY 535022</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <p>info@example.com</p>
+              </div>
+
+              <div>
+                <i class="bi bi-phone"></i>
+                <p>+1 5589 55488 55s</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">UP O'Clock</a>
+            <p>Unlock productivity and maximize your potential with UP O'Clock, the all-in-one time tracking solution designed to streamline your workflow.`</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Abou Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Abou Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">faq</a></li>
+              <li><a href="#">Editor help</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Abou Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights UP O'Clock. All rights reserved.</p>
+        <div class="credits">
+         
+          Designed by <a href="#">Shankar Solanki</a>
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/landing_page/vendor/aos/aos.js"></script>
+    <script src="/landing_page/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/landing_page/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/landing_page/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/landing_page/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="/landing_page/js/main.js"></script>
+
+</body>
+
+</html>
+
+

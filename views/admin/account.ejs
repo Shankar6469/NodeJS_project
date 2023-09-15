@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>User Account Details</title>
+  <style>
+    body {
+      background: url('/images/background_update_profile.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .card-header {
+      background-color: #f8f9fa;
+    }
+    
+    #profileImg {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .editBtn {
+      font-size: 0.8rem;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>Account Details</h3>
+          </div>
+            <form id="userForm" action="/admin/account" method="POST"  enctype="multipart/form-data">
+              <div class="card-body">
+                <div class="text-center mb-4">
+                  <div id="profilePicContainer">
+                    <img src="/upload/profile_pic/<%=data.profile_pic%>" alt="Profile Picture" id="profileImg" class="img-fluid rounded-circle">
+                    <input type="file" id="profilePic" name="profile_pic" class="d-none" >
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <div class="input-group">
+                  <input type="text" name="full_name"  id="fullName" class="form-control" value="<%= data.full_name%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="fullName">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more user details fields with Edit buttons -->
+              <div class="form-group">
+                <label for="userName">Username:</label>
+                <div class="input-group">
+                  <input type="text"  name="username" id="userName" class="form-control" value="<%= data.username%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="userName">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <div class="input-group">
+                  <input type="email" name="email" id="email" class="form-control" value="<%= data.email%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="email">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more user details fields with Edit buttons -->
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="input-group">
+                  <input type="password" name="password" id="password" class="form-control" value="<%= data.password%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="password">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more user details fields with Edit buttons -->
+              <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <div class="input-group">
+                  <input type="date" name="dob" id="dob" class="form-control" value="<%= data.dob%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="dob">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more user details fields with Edit buttons -->
+              <div class="form-group">
+                <label for="mobileNumber">Mobile Number:</label>
+                <div class="input-group">
+                  <input type="text" name="phone_number" id="mobileNumber" class="form-control" value="<%= data.phone_number%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="mobileNumber">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more user details fields with Edit buttons -->
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="input-group">
+                  <select id="gender" class="form-control" readonly>
+                    <option name="gender"  value="male">Male</option>
+                    <option  name="gender" value="female">Female</option>
+                    <option name="gender"  value="other">Other</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="gender">Edit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more user details fields with Edit buttons -->
+              <div class="form-group">
+                <label for="altMobileNumber">Alternate Mobile Number:</label>
+                <div class="input-group">
+                  <input type="text" name="alt_phone_number" id="altMobileNumber" class="form-control" value="<%= data.alt_phone_number%>" readonly>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-sm btn-primary editBtn" data-field="altMobileNumber">Edit</button>
+                  </div>
+                </div>
+              </div>
+             
+
+              <button type="submit" value="submit" class="btn btn-primary">Save</button>
+              <a href="/admin/"><button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button></a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Enable editing when the edit button is clicked
+    var editButtons = document.getElementsByClassName("editBtn");
+    for (var i = 0; i < editButtons.length; i++) {
+      editButtons[i].addEventListener("click", function () {
+        var fieldId = this.getAttribute("data-field");
+        var inputField = document.getElementById(fieldId);
+        inputField.removeAttribute("readonly");
+        inputField.focus();
+      });
+    }
+
+    // Update the profile picture when a new image is selected
+    document.getElementById("profileImg").addEventListener("click", function () {
+      document.getElementById("profilePic").click();
+    });
+
+    document.getElementById("profilePic").addEventListener("change", function (event) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var profileImg = document.getElementById("profileImg");
+        profileImg.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    });
+  </script>
+</body>
+
+</html>
